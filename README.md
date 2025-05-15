@@ -64,6 +64,36 @@ index.html
       <p>✨ DONE BY <strong>YASHWANTH K</strong> (212224040369) ✨</p>
     </div>
   </div>
+
+  <!-- Modal popup for image enlarge -->
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <!-- JavaScript for interaction -->
+  <script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modalImage");
+    const closeBtn = document.getElementsByClassName("close")[0];
+
+    document.querySelectorAll('.card img').forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    };
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
 </body>
 </html>
 ```
